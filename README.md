@@ -54,3 +54,5 @@ Nota:
 
 El mock no es necesario cuando estás probando la interacción con una API real, como en tu ejemplo con el servicio en localhost. Si tu objetivo es probar cómo tu aplicación interactúa con datos reales y confirmar que todo funciona correctamente con la API externa, entonces no deberías usar mocks. En ese caso, quieres una prueba que haga una llamada real a la API y verifique los datos.
 
+![image](https://github.com/user-attachments/assets/1a11b4be-d621-40e8-a2f1-3870911cc233)
+

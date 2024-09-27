@@ -11,7 +11,7 @@ public class WeatherReportService {
     private static final String API_KEY = "fa4c6cc9d10844aee962564ee9933af2";
     private static final String API_URL = "https://api.openweathermap.org/data/2.5/weather";
 
-    public WeatherReport getWeatherReport(double latitude, double longitude) {
+    public WeatherReport getWeatherReport(double longitude, double latitude) {
         RestTemplate restTemplate = new RestTemplate();
         String url = API_URL + "?lat=" + latitude + "&lon=" + longitude + "&appid=" + API_KEY;
         WeatherApiResponse response = restTemplate.getForObject(url, WeatherApiResponse.class);

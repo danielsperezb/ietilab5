@@ -36,26 +36,27 @@ class WeatherApplicationTests {
 		WeatherApiResponse mockApiResponse = new WeatherApiResponse();
 		WeatherApiResponse.Main mockMain = new WeatherApiResponse.Main();
 
-		// Asegúrate de que el objeto tiene los datos correctos
-		mockMain.setTemperature(296.63);  // Temperatura en Kelvin
-		mockMain.setHumidity(90);  // Humedad en porcentaje
+		// Simulamos que la API devuelve una temperatura de 0 y una humedad de 93
+		mockMain.setTemperature(0);  // Temperatura
+		mockMain.setHumidity(93);    // Humedad
 
 		// Configurar el objeto mockApiResponse
 		mockApiResponse.setMain(mockMain);
 
-		// Mock del comportamiento de restTemplate para devolver la respuesta simulada
+		// Simulamos la respuesta de restTemplate
 		when(restTemplate.getForObject(anyString(), eq(WeatherApiResponse.class))).thenReturn(mockApiResponse);
 
 		// Llamada al servicio con coordenadas simuladas
-		WeatherReport report = weatherReportService.getWeatherReport(10.0, 20.0);
+		WeatherReport report = weatherReportService.getWeatherReport(20.0, 10.0);
 
-		// Verifica que el servicio devuelve la temperatura y humedad correctas
-		assertEquals(296.63, report.getTemperature(), 0.01);
-		assertEquals(90, report.getHumidity());
+		// Verificamos que la temperatura y humedad son las esperadas
+		assertEquals(0, report.getTemperature());
+		assertEquals(93, report.getHumidity());
 
 		// Verifica que restTemplate fue invocado correctamente
 		verify(restTemplate, times(1)).getForObject(anyString(), eq(WeatherApiResponse.class));
 	}
+
 
 	@Test
 	void contextLoads() {

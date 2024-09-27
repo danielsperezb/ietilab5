@@ -20,8 +20,8 @@ public class WeatherReportController {
     //Sample request: http://localhost:8080/v1/api/weather-report?latitude=37.8267&longitude=-122.4233
 
     @GetMapping("/weather-report")
-    public WeatherReport getWeatherReport(@RequestParam double latitude, @RequestParam double longitude) {
-        return weatherReportService.getWeatherReport(latitude, longitude);
+    public WeatherReport getWeatherReport(@RequestParam double longitude, @RequestParam double latitude) {
+        return weatherReportService.getWeatherReport( longitude, latitude);
     }
 }
 

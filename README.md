@@ -43,3 +43,10 @@
    ```bash
    git clone https://github.com/tu_usuario/tu_repositorio.git
    cd tu_repositorio
+
+
+
+![image](https://github.com/user-attachments/assets/a56118e1-deea-4c92-8aff-dde863d5b035)
+
+![image](https://github.com/user-attachments/assets/e928a355-0ce7-4ec0-8c24-b11f5a1a5b4d)
+
